@@ -1,4 +1,5 @@
 @import Foundation;
+#import <CocoaLumberjack/DDLog.h>
 
 #define LOG_FLAG_API     (1 << 4)
 #define LOG_FLAG_UI      (1 << 5)

@@ -1,4 +1,6 @@
 #import "BDKLog.h"
+
+#import <UIKit/UIColor.h>
 #import <libkern/OSAtomic.h>
 
 #import <CocoaLumberjack/DDLog.h>
