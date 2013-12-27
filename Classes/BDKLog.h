@@ -13,7 +13,6 @@
 #define DDLogUI(frmt, ...)    ASYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_UI, 0, frmt, ##__VA_ARGS__)
 #define DDLogData(frmt, ...)  ASYNC_LOG_OBJC_MAYBE(ddLogLevel, LOG_FLAG_DATA, 0, frmt, ##__VA_ARGS__)
 
-// #define LOG_FLAG_CUSTOM (LOG_FLAG_UI | LOG_FLAG_DATA)
 #define LOG_FLAG_CUSTOM (LOG_FLAG_API | LOG_FLAG_UI | LOG_FLAG_DATA)
 
 /**

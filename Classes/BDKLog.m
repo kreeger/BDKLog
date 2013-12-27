@@ -44,7 +44,7 @@ Most of this code is from https://github.com/robbiehanson/CocoaLumberjack/wiki/C
         // Multi-threaded mode.
         // NSDateFormatter is NOT thread-safe.
 
-        NSString *key = @"MyCustomFormatter_NSDateFormatter";
+        NSString *key = @"BDKLog_NSDateFormatter";
 
         NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
         NSDateFormatter *dateFormatter = threadDictionary[key];
@@ -63,23 +63,24 @@ Most of this code is from https://github.com/robbiehanson/CocoaLumberjack/wiki/C
 - (NSString *)formatLogMessage:(DDLogMessage *)logMessage {
     NSString *logLevel;
     switch (logMessage->logFlag) {
-        case LOG_FLAG_ERROR : logLevel = @"ERROR"; break;
-        case LOG_FLAG_WARN  : logLevel = @"WARN"; break;
-        case LOG_FLAG_INFO  : logLevel = @"INFO"; break;
-        default             : logLevel = @"VERBOSE"; break;
+        case LOG_FLAG_ERROR : logLevel = @"E"; break;
+        case LOG_FLAG_WARN  : logLevel = @"W"; break;
+        case LOG_FLAG_INFO  : logLevel = @"I"; break;
+//        case LOG_FLAG_DEBUG : logLevel = @"D"; break;
+        default             : logLevel = @"V"; break;
     }
 
     NSString *dateAndTime = [self stringFromDate:(logMessage->timestamp)];
     NSString *logMsg = logMessage->logMsg;
 
-    return [NSString stringWithFormat:@"%@ %@ | %@", logLevel, dateAndTime, logMsg];
+    return [NSString stringWithFormat:@"%@ %@ | %@\n", logLevel, dateAndTime, logMessage->logMsg];
 }
 
-- (void)didAddToLogger:(id <DDLogger>)logger {
+- (void)didAddToLogger:(id<DDLogger>)logger {
     OSAtomicIncrement32(&_atomicLoggerCount);
 }
 
-- (void)willRemoveFromLogger:(id <DDLogger>)logger {
+- (void)willRemoveFromLogger:(id<DDLogger>)logger {
     OSAtomicDecrement32(&_atomicLoggerCount);
 }
 
