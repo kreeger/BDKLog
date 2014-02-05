@@ -75,7 +75,7 @@ Most of this code is from https://github.com/robbiehanson/CocoaLumberjack/wiki/C
     NSString *dateAndTime = [self stringFromDate:(logMessage->timestamp)];
     NSString *logMsg = logMessage->logMsg;
 
-    return [NSString stringWithFormat:@"%@ %@ | %@\n", logLevel, dateAndTime, logMessage->logMsg];
+    return [NSString stringWithFormat:@"%@ %@ | %@", logLevel, dateAndTime, logMessage->logMsg];
 }
 
 - (void)didAddToLogger:(id<DDLogger>)logger {
