@@ -15,14 +15,16 @@ Most of this code is from https://github.com/robbiehanson/CocoaLumberjack/wiki/C
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setLogFormatter:[BDKLog new]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.60 green:0.81 blue:0.92 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.20 green:0.62 blue:0.85 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_INFO];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.46 green:1.00 blue:0.48 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.22 green:0.68 blue:0.66 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_API];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:1.00 green:1.00 blue:0.60 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.76 green:0.60 blue:0.12 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_UI];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.87 green:0.67 blue:0.53 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.59 green:0.65 blue:0.12 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_DATA];
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.89 green:0.29 blue:0.26 alpha:1.0]
+                                     backgroundColor:Nil forFlag:LOG_FLAG_WARN];
 }
 
 - (NSString *)stringFromDate:(NSDate *)date {
