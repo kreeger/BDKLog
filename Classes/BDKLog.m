@@ -15,16 +15,18 @@ Most of this code is from https://github.com/robbiehanson/CocoaLumberjack/wiki/C
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setLogFormatter:[BDKLog new]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.20 green:0.62 blue:0.85 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.70 green:0.77 blue:0.85 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_INFO];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.22 green:0.68 blue:0.66 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.41 green:0.53 blue:0.56 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_API];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.76 green:0.60 blue:0.12 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.67 green:0.60 blue:0.67 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_UI];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.59 green:0.65 blue:0.12 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.63 green:0.67 blue:0.50 alpha:1.0]
                                      backgroundColor:nil forFlag:LOG_FLAG_DATA];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.89 green:0.29 blue:0.26 alpha:1.0]
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.78 green:0.65 blue:0.45 alpha:1.0]
                                      backgroundColor:Nil forFlag:LOG_FLAG_WARN];
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:0.75 green:0.44 blue:0.35 alpha:1.0]
+                                     backgroundColor:Nil forFlag:LOG_FLAG_ERROR];
 }
 
 - (NSString *)stringFromDate:(NSDate *)date {
